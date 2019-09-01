@@ -1,0 +1,27 @@
+<el-input [(model)]="query" placeholder="Search" (input)="queryChanged($event)"></el-input>
+<el-table [model]="tableData" [stripe]="true">
+  <el-table-column model-key="id" label="ID" width="100">
+  </el-table-column>
+  <el-table-column model-key="type" label="Type" width="100">
+  </el-table-column>
+  <el-table-column label="Link" width="300">
+    <ng-template #slot let-scope="scope">
+      <a [href]="scope.rowData.links ? scope.rowData.links.self: scope.rowData.links">{{scope.rowData.links ? scope.rowData.links.self: scope.rowData.links}}</a>
+    </ng-template>
+  </el-table-column>
+  <el-table-column label="URN" width="300">
+    <ng-template #slot let-scope="scope">
+      <p>{{scope.rowData.attributes ? scope.rowData.attributes.urn: ''}}</p>
+    </ng-template>
+  </el-table-column>
+  <el-table-column label="Cover" width="200">
+    <ng-template #slot let-scope="scope">
+      <p>{{scope.rowData.attributes ? scope.rowData.attributes.display_properties.type: ''}}</p>
+    </ng-template>
+  </el-table-column>
+  <el-table-column label="Image" width="200">
+      <ng-template #slot let-scope="scope">
+        <img [src]="scope.rowData.attributes ? scope.rowData.attributes.display_properties.image: ''"/>
+      </ng-template>
+    </el-table-column>
+</el-table>
