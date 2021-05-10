@@ -22,7 +22,7 @@
     "deepdash": "^4.2.12",
     "deepdash-es": "^4.2.12",
     "element-angular": "^0.7.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.15",
     "rxjs": "^6.5.2",
     "tslib": "^1.10.0",
